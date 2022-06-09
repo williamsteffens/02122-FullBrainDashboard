@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <div>i also have aids but in the navbar</div>
+    <div className="underline">i also have aids but in the navbar</div>
   )
 }
 

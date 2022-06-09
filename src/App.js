@@ -6,7 +6,6 @@ import { Navbar } from './components';
 const App = () => {
   return (
     <>
-      <h1>I have sdfasdfaids</h1>
       <Navbar />
     </>
     );
