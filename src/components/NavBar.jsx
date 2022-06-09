@@ -2,7 +2,10 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <div className="underline">i alsoj,ioiouio have aids but in the navbar</div>
+    <div className="w-full flex justify-between">
+      <span className="h-36 w-11 border-2 border-teal-300"></span>
+      <span className="h-34 w-36 border-4 border-red-300"></span>
+    </div>
   )
 }
 
