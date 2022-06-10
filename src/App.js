@@ -10,9 +10,11 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <Dashboard />
-      <Footer />
-    </>
+      <div className="mx-60 my-5">
+        <Dashboard />
+        <Footer />
+      </div>
+      </>
     );
 }
 

@@ -5,7 +5,7 @@ import { DashboardNavbar, BarChart, GraphNetwork, Milestones, Overview, RadarCha
 
 const Dashboard = () => {
   return (
-    <div className="">
+    <div>
         <BrowserRouter>
             <div>
                 <DashboardNavbar />
@@ -17,7 +17,7 @@ const Dashboard = () => {
                     <Route path="/milestones" element={<Milestones />} />
                     <Route path="/impact" element={<BarChart />} />
                     <Route path="/network" element={<GraphNetwork />} />
-                    <Route path="/distribution" element={<RadarChart />} />
+                    <Route path="/knowledge_distribution" element={<RadarChart />} />
                 </Routes>
             </div>
         </BrowserRouter>

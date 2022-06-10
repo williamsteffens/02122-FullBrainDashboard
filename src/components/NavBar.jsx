@@ -2,9 +2,8 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <div className="w-full flex justify-between">
-      <span className="h-36 w-11 border-2 border-teal-300"></span>
-      <span className="h-34 w-36 border-4 border-red-300"></span>
+    <div className="w-full sticky flex justify-between items-center px-7 py-2 bg-white border-b-1">
+      <img style={{ height: 38 }} src="./fullBrainLogo.png" alt="FullBrainLogo" />
     </div>
   )
 }

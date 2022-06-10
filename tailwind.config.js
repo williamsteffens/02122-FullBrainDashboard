@@ -1,4 +1,5 @@
 module.exports = {
+    mode: 'jit',
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     darkMode: 'class',
     theme: {
@@ -7,6 +8,9 @@ module.exports = {
         body: ['Open Sans', 'sans-serif'],
       },
       extend: {
+        colors: {
+          'fullbrain-purple': '#7D61E3',
+        },
         fontSize: {
           14: '14px',
         },
