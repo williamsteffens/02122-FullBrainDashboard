@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { DashboardNavbar, BarChart, GraphNetwork, Milestones, Overview, RadarChart } from '.'
+import { DashboardNavbar, BarChartComp, GraphNetwork, Milestones, Overview, RadarChart } from '.'
 
 
 const Dashboard = () => {
@@ -15,7 +15,7 @@ const Dashboard = () => {
                     <Route path="/" element={<Overview />} />
 
                     <Route path="/milestones" element={<Milestones />} />
-                    <Route path="/impact" element={<BarChart />} />
+                    <Route path="/impact" element={<BarChartComp />} />
                     <Route path="/network" element={<GraphNetwork />} />
                     <Route path="/knowledge_distribution" element={<RadarChart />} />
                 </Routes>
