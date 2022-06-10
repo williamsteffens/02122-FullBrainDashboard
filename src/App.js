@@ -1,5 +1,6 @@
 import './App.css';
-import { Navbar } from './components';
+import React from 'react';
+import { Navbar, BarChartComp } from './components';
 // import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 
@@ -8,6 +9,7 @@ const App = () => {
     <>
       <h1>I have sdfasdfaids</h1>
       <Navbar />
+      <BarChartComp />
     </>
     );
 }
