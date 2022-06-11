@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import { Navbar, Dashboard, Footer } from './components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 
@@ -10,13 +11,18 @@ import { Navbar, Dashboard, Footer } from './components';
 const App = () => {
   return (
     <>
-      <Navbar />
-      <div className="mx-60 my-5">
-        <Dashboard />
-        <Footer />
-      </div>
-      </>
-    );
+      <BrowserRouter>
+        <Navbar />
+        <div className="mx-60 my-5">
+          <Routes>
+            <Route index element={<Dashboard />} />
+            <Route path="/dashboard/*" element={<Dashboard />} />
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
