@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/02122-FullBrainDashboard/static/css/main.6fb6ea3e.css",
-    "main.js": "/02122-FullBrainDashboard/static/js/main.45f76862.js",
+    "main.js": "/02122-FullBrainDashboard/static/js/main.2e7953b5.js",
     "index.html": "/02122-FullBrainDashboard/index.html",
     "main.6fb6ea3e.css.map": "/02122-FullBrainDashboard/static/css/main.6fb6ea3e.css.map",
-    "main.45f76862.js.map": "/02122-FullBrainDashboard/static/js/main.45f76862.js.map"
+    "main.2e7953b5.js.map": "/02122-FullBrainDashboard/static/js/main.2e7953b5.js.map"
   },
   "entrypoints": [
     "static/css/main.6fb6ea3e.css",
-    "static/js/main.45f76862.js"
+    "static/js/main.2e7953b5.js"
   ]
 }
