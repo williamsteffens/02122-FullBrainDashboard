@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/02122-FullBrainDashboard/static/css/main.6fb6ea3e.css",
+    "main.js": "/02122-FullBrainDashboard/static/js/main.b779d329.js",
+    "index.html": "/02122-FullBrainDashboard/index.html",
+    "main.6fb6ea3e.css.map": "/02122-FullBrainDashboard/static/css/main.6fb6ea3e.css.map",
+    "main.b779d329.js.map": "/02122-FullBrainDashboard/static/js/main.b779d329.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6fb6ea3e.css",
+    "static/js/main.b779d329.js"
+  ]
+}
