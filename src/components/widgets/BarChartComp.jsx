@@ -12,8 +12,7 @@ const BarChartComp = () => {
     ]
     return (
       <div>
-        <h1>Weekly Activity Chart</h1>
-        <BarChart width={730} height={250} data={likes}>
+        <BarChart margin={{ top: 30, right: 0, left: 0, bottom: 10 }} width={730} height={350} data={likes}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
