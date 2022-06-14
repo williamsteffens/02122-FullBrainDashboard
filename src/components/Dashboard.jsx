@@ -12,6 +12,7 @@ const Dashboard = () => {
         </div>
         <div>
             <Routes>
+                <Route path="/" element={<Overview />} />
                 <Route path="overview" element={<Overview />} />
                 
                 <Route path="milestones" element={<Milestones />} />
