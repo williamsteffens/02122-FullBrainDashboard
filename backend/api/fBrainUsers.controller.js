@@ -1,4 +1,4 @@
-import FBrainUsersDAOs from "../dao/fBrainUsersDAO.js";
+import FBrainUsersDAOs from "../dataAccessObject/fBrainUsersDAO.js";
 
 export default class FBrainUsersController {
   static async apiGetFBrainUsers(req, res, next) {
