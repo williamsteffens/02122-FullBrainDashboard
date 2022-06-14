@@ -1,10 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { DashboardNavbar, Overview, Milestones, BarChartComp, GraphNetwork, RadarChartComp } from '.';
+import { DashboardNavbar, Overview, Milestones, BarChartComp, NetworkComp, RadarChartComp } from '.';
 
 
 
-const Dashboard = () => {
+const Dashboard = ({ users }) => {
+  console.log(users);
+
   return (
     <div>
         <div>
@@ -17,7 +19,7 @@ const Dashboard = () => {
                 
                 <Route path="milestones" element={<Milestones />} />
                 <Route path="impact" element={<BarChartComp />} />
-                <Route path="network" element={<GraphNetwork />} />
+                <Route path="network" element={<NetworkComp users={ users } />} />
                 <Route path="knowledge_distribution" element={<RadarChartComp />} />
             </Routes>
         </div>
