@@ -24,7 +24,7 @@ const App = () => {
   return (
     <>  
       <Navbar />
-      <div className="mx-60 my-5">
+      <div className="my-5">
         <Routes>
           <Route path="/" element={<Dashboard users={ users } />} />
           <Route path="dashboard/*" element={<Dashboard users={ users } />} />

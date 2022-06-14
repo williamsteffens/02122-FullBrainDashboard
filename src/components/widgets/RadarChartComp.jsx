@@ -44,8 +44,8 @@ const RadarChartComp = () => {
       
     return (
       <div>
-        <h1>Your Skills</h1>
-        <RadarChart outerRadius={90} width={730} height={250} data={data}>
+        <h1 className="font-bold">Your Skills</h1>
+        <RadarChart outerRadius={100} width={600} height={250} data={data}>
             <PolarGrid />
             <PolarAngleAxis dataKey="subject" />
             <PolarRadiusAxis angle={30} domain={[0, 150]} />

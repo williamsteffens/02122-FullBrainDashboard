@@ -12,7 +12,10 @@ const BarChartComp = () => {
     ]
     return (
       <div>
-        <BarChart margin={{ top: 30, right: 0, left: 0, bottom: 10 }} width={730} height={350} data={likes}>
+        <div style={{display: 'flex', justifyContent:'ceneter', alignItems:'center'}}>
+          <h1 className="font-bold">Activity</h1>
+        </div>
+        <BarChart margin={{ top: 30, right: 30, left: 0, bottom: 10 }} width={650} height={350} data={likes}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />

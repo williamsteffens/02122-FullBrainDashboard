@@ -8,7 +8,7 @@ const DashboardNavbar = () => {
     const normalLink = "";
 
     return (
-        <div className="flex justify-between border-b-[3px] border-b-slate-600 items-end mb-5">
+        <div className="mx-20 flex justify-between border-b-[3px] border-b-slate-600 items-end mb-5">
             <h1 className="text-xl font-medium">Dashboard</h1>
             <div className="flex items-end gap-3">
                 <NavLink to="/dashboard/overview" className={({ isActive }) => isActive ? activeLink : normalLink}>
