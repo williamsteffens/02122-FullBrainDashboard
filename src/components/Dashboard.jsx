@@ -5,8 +5,6 @@ import { DashboardNavbar, Overview, Milestones, BarChartComp, NetworkComp, Radar
 
 
 const Dashboard = ({ users }) => {
-  console.log(users);
-
   return (
     <div>
         <div>
@@ -19,7 +17,7 @@ const Dashboard = ({ users }) => {
                 
                 <Route path="milestones" element={<Milestones />} />
                 <Route path="impact" element={<BarChartComp />} />
-                <Route path="network" element={<NetworkComp users={ users } />} />
+                <Route path="network" element={<NetworkComp users={users} />} />
                 <Route path="knowledge_distribution" element={<RadarChartComp />} />
             </Routes>
         </div>
