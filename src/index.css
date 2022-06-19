@@ -113,10 +113,34 @@ code {
 .network {
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #F2F2F2;
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 5px;
   left: 0;
   top: 0;
 }
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.8;
+}
+
+.nodes circle {
+  stroke: #0099FF;
+  stroke-width: 4px;
+  cursor: pointer;
+}
+
 
 .overview-card{
   width: 40rem;

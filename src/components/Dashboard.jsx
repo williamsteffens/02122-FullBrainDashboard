@@ -10,7 +10,7 @@ const Dashboard = ({ users }) => {
         <div>
             <DashboardNavbar />
         </div>
-        <div className="mx-20 flex justify-between mb-5">
+        <div className="mx-20 mb-5">
             <Routes>
                 <Route path="/" element={<Overview />} />
                 <Route path="overview" element={<Overview />} />   
