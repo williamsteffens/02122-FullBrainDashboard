@@ -11,7 +11,7 @@ const BarChartComp = () => {
         {name: "Thursday", posts: 0, shares: 0, comments: 0}
     ]
     return (
-      <div>
+      <div className="h-full">
         <div style={{display: 'flex', justifyContent:'ceneter', alignItems:'center'}}>
           <h1 className="font-bold">Activity</h1>
         </div>

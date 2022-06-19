@@ -24,7 +24,7 @@ let graph = {
   ]
 };
 
-const NetworkComp = ({ users }) => {
+const NetworkComp = ({ users, overview }) => {
 
   const svgRef = useRef();
   const wrapperRef = useRef();
@@ -139,6 +139,11 @@ const NetworkComp = ({ users }) => {
 
   return (
     <div ref={wrapperRef} className="h-96">
+      {!overview ? '' :
+        <div style={{display: 'flex', justifyContent:'flex-start'}}>
+          <h1 className="font-bold">Network</h1>
+        </div>
+      }
       <svg ref={svgRef} className="network" ></svg>
     </div>
   )

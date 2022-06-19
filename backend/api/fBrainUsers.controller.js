@@ -24,7 +24,7 @@ export default class FBrainUsersController {
       });
 
     let response = {
-      restaurants: FB_usersList,
+      users: FB_usersList,
       page: page,
       filters: filters,
       entries_per_page: FB_usersPerPage,

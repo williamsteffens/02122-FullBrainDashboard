@@ -6,15 +6,14 @@ import { DashboardNavbar, Overview, Milestones, BarChartComp, NetworkComp, Radar
 
 const Dashboard = ({ users }) => {
   return (
-    <div>
+    <div className="flex flex-col w-full">
         <div>
             <DashboardNavbar />
         </div>
-        <div>
+        <div className="mx-20 flex justify-between mb-5">
             <Routes>
                 <Route path="/" element={<Overview />} />
-                <Route path="overview" element={<Overview />} />
-                
+                <Route path="overview" element={<Overview />} />   
                 <Route path="milestones" element={<Milestones />} />
                 <Route path="impact" element={<BarChartComp />} />
                 <Route path="network" element={<NetworkComp users={users} />} />
