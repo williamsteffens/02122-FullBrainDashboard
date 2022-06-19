@@ -30,6 +30,20 @@ const NetworkComp = ({ users }) => {
   const wrapperRef = useRef();
 
   useEffect(() => {
+
+    /* Smart way to make nodes?
+    let nodes = {}
+    
+    links.forEach(link => {
+      links.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
+      link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
+    })
+
+    // if not then use the hierachy thing from the react hooks video 
+    */
+
+
+
     const svg = d3.select(svgRef.current);
 
     const width = wrapperRef.current.clientWidth;
@@ -47,7 +61,7 @@ const NetworkComp = ({ users }) => {
           .links(graph.links)
       )
       .force("collide", d3.forceCollide().radius(d => d.r + 1).iterations(3))
-      .force("charge", d3.forceManyBody().strength(-22))
+      .force("charge", d3.forceManyBody().strength(-100))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .on("tick", ticked);
 
@@ -58,7 +72,7 @@ const NetworkComp = ({ users }) => {
       .data(graph.links)
       .enter()
       .append("line")
-      .attr("stroke-width", d => 10)
+      .attr("stroke-width", d => 6)
       .attr("style", "stroke: #777;");
       //.attr('style', 'stroke: green; stroke-opacity: 0.6;');
 
@@ -71,7 +85,7 @@ const NetworkComp = ({ users }) => {
       .append("circle")
       .attr("r", 22)
       .attr("fill", d => "red")
-      .attr("style", "stroke: blue; stroke-width: 5px;")
+      .attr("style", "stroke: #333; stroke-width: 4px;")
       .call(
         d3
           .drag()
