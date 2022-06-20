@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/02122-FullBrainDashboard/static/css/main.6fb6ea3e.css",
-    "main.js": "/02122-FullBrainDashboard/static/js/main.2e7953b5.js",
+    "main.css": "/02122-FullBrainDashboard/static/css/main.2456b753.css",
+    "main.js": "/02122-FullBrainDashboard/static/js/main.70285443.js",
+    "static/media/placeholder_image.jpeg": "/02122-FullBrainDashboard/static/media/placeholder_image.f0c90c7ccc0d72645305.jpeg",
     "index.html": "/02122-FullBrainDashboard/index.html",
-    "main.6fb6ea3e.css.map": "/02122-FullBrainDashboard/static/css/main.6fb6ea3e.css.map",
-    "main.2e7953b5.js.map": "/02122-FullBrainDashboard/static/js/main.2e7953b5.js.map"
+    "main.2456b753.css.map": "/02122-FullBrainDashboard/static/css/main.2456b753.css.map",
+    "main.70285443.js.map": "/02122-FullBrainDashboard/static/js/main.70285443.js.map"
   },
   "entrypoints": [
-    "static/css/main.6fb6ea3e.css",
-    "static/js/main.2e7953b5.js"
+    "static/css/main.2456b753.css",
+    "static/js/main.70285443.js"
   ]
 }
