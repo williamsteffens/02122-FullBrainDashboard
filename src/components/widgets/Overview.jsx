@@ -9,11 +9,11 @@ import LoadingSpinner from '../ui/LoadingSpinner';
 
 const Overview = () => {
   const [tally, setTally] = useState(null);
-console.log(process.env.REACT_APP_BACKEND_DATA)
+  const [days, setDays] = useState(null)
+
   useEffect( ()=> {
-    axios.get(process.env.REACT_APP_BACKEND_DATA, {crossDomain: true})
+    axios.get(process.env.REACT_APP_BACKEND_DATA)
       .then(res => {
-        console.log("REST")
         let users = (res.data.users)
         let activityScores = []
         
@@ -35,6 +35,20 @@ console.log(process.env.REACT_APP_BACKEND_DATA)
         setTally(users.sort( (a,b) => b.activityScore - a.activityScore ))
       })
       .catch( err => console.log(err))
+
+      axios.get(process.env.REACT_APP_BACKEND_DATA_WEEKLY)
+      .then(res => {
+        let weeklyResponse = res.data.wekdays[0].days
+
+        weeklyResponse.Monday.name = 'Monday';
+        weeklyResponse.Tuesday.name = 'Tuesday';
+        weeklyResponse.Wednesday.name = 'Wednesday';
+        weeklyResponse.Thursday.name = 'Thursday';
+        weeklyResponse.Friday.name = 'Friday';
+        
+        setDays([ weeklyResponse.Monday, weeklyResponse.Tuesday, weeklyResponse.Wednesday, weeklyResponse.Thursday, weeklyResponse.Friday ])
+      })   
+      .catch(err => console.log(err))
   },[])
 
   return (
@@ -49,7 +63,7 @@ console.log(process.env.REACT_APP_BACKEND_DATA)
       </div>
     </div>*/
     <div className="flex flex-wrap justify-center items-center">
-            <div className="mr-4 mb-4 p-3 shrink-0 w-[700px] rounded-xl bg-white shadow-lg overview-card overflow-auto"> <BarChartComp></BarChartComp> </div>
+            <div className="mr-4 mb-4 p-3 shrink-0 w-[700px] rounded-xl bg-white shadow-lg overview-card overflow-auto"> <BarChartComp data={days}></BarChartComp> </div>
             <div className="mb-4 p-3 shrink-0 w-[700px] rounded-xl bg-white shadow-lg overview-card overflow-auto"> <RadarChartComp></RadarChartComp> </div>
             <div className="mr-4 mb-4 p-3 shrink-0 w-[700px] rounded-xl bg-white shadow-lg overview-card-2nd-row overflow-auto"> <Milestones overview></Milestones> </div>
             <div className="mb-4 p-3 shrink-0 w-[700px] rounded-xl bg-white shadow-lg overview-card-2nd-row overflow-auto"> <NetworkComp overview></NetworkComp> </div>

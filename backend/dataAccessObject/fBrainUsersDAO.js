@@ -29,6 +29,7 @@ export default class FBrainUsersDAO {
                 query = { "Email": { $eq: filters["Email"] } }
             }
         }
+
         let cursor
 
         try{

@@ -5,9 +5,27 @@ import BarChart from '../charts/BarChart';
 import ProgressBar from '../charts/ProgressBar';
 import LoadingSpinner from './LoadingSpinner';
 
+const handleDescription = (value) => {
+    if(value<=25){
+        return 'is on a Steady Pace'
+    }
+    else if (value>25 && value<=33){
+        return 'is on a Roll'
+    }
+    else if (value>33 && value<=75){
+        return 'is Unstoppable!'
+    }
+    else if (value>75){
+        return 'is Godlike'
+    }
+    else {
+        return
+    }
+}
+
 const GroupList = ({data, overview}) => {
     const [barChartDetails, setBarChartDetails] = useState(null);
-    console.log(overview)
+    
     const handleOnClick = (data) => {
         setBarChartDetails([
             { name: "Questions Asked",  value: data['Questions asked']},
@@ -29,7 +47,8 @@ const GroupList = ({data, overview}) => {
                 </div>
                     <ul className="h-full overflow-auto">
                         {data ? data.map((item,index) => {
-                            // const progress = `${Math.round(item.value/item.threshold*100)}`
+                            console.log(item.Name)
+                            console.log(item.activityScore)
                             return (
                             <div key={index}>
                                 <li className="flex border border-gray-300 rounded-md h-28 list-item cursor-pointer" onClick={()=>handleOnClick(item)}>
@@ -39,7 +58,7 @@ const GroupList = ({data, overview}) => {
                                             <div className="text-containers-headers flex ml-6 mr-2 w-full">
                                                 <div className="flex flex-col w-full">
                                                     <h5 className="text-lg font-medium milestone-header">{item.Name}</h5>
-                                                    <h6 className="text-base milestone-description">{"Test description"}</h6>
+                                                    <h6 className="text-base milestone-description">{handleDescription(item.activityScore)}</h6>
                                                 </div>
                                             </div>
                                             <div className="text-containers-headers-details flex flex-col grid grid-cols-1 divide-y mr-5 ">

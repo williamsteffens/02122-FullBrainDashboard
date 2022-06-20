@@ -41,7 +41,6 @@ const NetworkComp = ({ users, overview }) => {
       links.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
       link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
     })
-
     // if not then use the hierachy thing from the react hooks video 
     */
 
@@ -165,3 +164,4 @@ const NetworkComp = ({ users, overview }) => {
 }
 
 export default NetworkComp
+

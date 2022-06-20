@@ -1,21 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
 
-const BarChartComp = () => {
+const BarChartComp = ({data}) => {
+  const [ days, setDays ] = useState(null);
 
-    const likes = [
-        {name: "Monday", posts: 12, shares: 6, comments: 8},
-        {name: "Tuesday", posts: 15, shares: 0, comments: 10},
-        {name: "Wednesday", posts: 9, shares: 12, comments: 5},
-        {name: "Thursday", posts: 5, shares: 5, comments: 12},
-        {name: "Thursday", posts: 0, shares: 0, comments: 0}
-    ]
+  useEffect( ()=> {
+    axios.get(process.env.REACT_APP_BACKEND_DATA_WEEKLY)
+      .then(res => {
+        let weeklyResponse = res.data.wekdays[0].days
+
+        weeklyResponse.Monday.name = 'Monday';
+        weeklyResponse.Tuesday.name = 'Tuesday';
+        weeklyResponse.Wednesday.name = 'Wednesday';
+        weeklyResponse.Thursday.name = 'Thursday';
+        weeklyResponse.Friday.name = 'Friday';
+        
+        setDays([ weeklyResponse.Monday, weeklyResponse.Tuesday, weeklyResponse.Wednesday, weeklyResponse.Thursday, weeklyResponse.Friday ])
+      })   
+      .catch(err => console.log(err))
+  },[])
+  
     return (
       <div className="h-full">
         <div style={{display: 'flex', justifyContent:'ceneter', alignItems:'center'}}>
           <h1 className="font-bold">Activity</h1>
         </div>
-        <BarChart margin={{ top: 30, right: 30, left: 0, bottom: 10 }} width={650} height={350} data={likes}>
+        <BarChart margin={{ top: 30, right: 30, left: 0, bottom: 10 }} width={650} height={350} data={data ? data : days}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
