@@ -40,7 +40,7 @@ const BarChartComp = ({data}) => {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="likes" stackId="a" fill="#8884d8" />
+              <Bar dataKey="posts" stackId="a" fill="#8884d8" />
               <Bar dataKey="shares" stackId="a" fill="#82ca9d" />
               <Bar dataKey="comments" stackId="a" fill="#ffc658" />
           </BarChart>

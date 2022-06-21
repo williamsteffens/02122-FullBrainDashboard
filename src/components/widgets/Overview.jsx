@@ -68,6 +68,7 @@ const Overview = () => {
             <div className="mr-4 mb-4 p-3 shrink-0 w-[700px] rounded-xl bg-white shadow-lg overview-card-2nd-row overflow-auto"> <Milestones overview></Milestones> </div>
             <div className="mb-4 p-3 shrink-0 w-[700px] rounded-xl bg-white shadow-lg overview-card-2nd-row overflow-auto"> <NetworkComp overview></NetworkComp> </div>
             <div className="mt-2 p-3 shrink-0 w-[1400px] rounded-xl bg-white shadow-lg h-140 overflow-auto">   {tally ? <LeaderBoard data={tally} overview/> : <LoadingSpinner/>}</div>
+            {/* <div className="mt-2 p-3 shrink-0 w-[1400px] rounded-xl bg-white shadow-lg h-140 overflow-auto">   {tally ? <LeaderBoard data={tally} overview/> : <LoadingSpinner/>}</div> */}
     </div>
   )
 }
