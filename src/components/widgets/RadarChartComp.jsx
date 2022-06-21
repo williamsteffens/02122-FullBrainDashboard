@@ -6,130 +6,121 @@ const RadarChartComp = ({ user, users }) => {
     const [radarStats, setRadarStats] = useState([]);
     const [currRadar, setCurrRadar] = useState("steam");
 
-    let setSteamStats; 
-    let setMathStats; 
-    let setProgStats; 
 
-    if (user) {
-      let STEAM = [
-        {
-          "subject": "Science",
-          "A": 10,
-          "B": user.skills.steam.science,
-          "fullMark": 150
-        },
-        {
-          "subject": "Technology",
-          "A": 98,
-          "B": user.skills.steam.technology,
-          "fullMark": 150
-        },
-        {
-          "subject": "Engineering",
-          "A": 86,
-          "B": user.skills.steam.engineering,
-          "fullMark": 150
-        },
-        {
-          "subject": "Arts",
-          "A": 99,
-          "B": user.skills.steam.arts,
-          "fullMark": 150
-        },
-        {
-          "subject": "Maths",
-          "A": 85,
-          "B": user.skills.steam.maths,
-          "fullMark": 150
-        }
-      ];
-
-      let Math = [
-        {
-          "subject": "Discrete Maths",
-          "A": 30,
-          "B": user.skills.math.disc,
-          "fullMark": 150
-        },
-        {
-          "subject": "Calculus",
-          "A": 30,
-          "B": user.skills.math.calc,
-          "fullMark": 150
-        },
-        {
-          "subject": "Linear Algebra",
-          "A": 30,
-          "B": user.skills.math.linAlg,
-          "fullMark": 150
-        },
-        {
-          "subject": "Statistics",
-          "A": 99,
-          "B": user.skills.math.stats,
-          "fullMark": 150
-        },
-        {
-          "subject": "Cryptology",
-          "A": 85,
-          "B": user.skills.math.crypto,
-          "fullMark": 150
-        }
-      ];
-
-      let Prog = [
-        {
-          "subject": "OOP",
-          "A": 120,
-          "B": user.skills.prog.oop,
-          "fullMark": 150
-        },
-        {
-          "subject": "Logical Prog.",
-          "A": 98,
-          "B": user.skills.prog.logicprog,
-          "fullMark": 150
-        },
-        {
-          "subject": "Functionl Prog.",
-          "A": 86,
-          "B": user.skills.prog.funcprog,
-          "fullMark": 150
-        },
-        {
-          "subject": "Scripting",
-          "A": 99,
-          "B": user.skills.prog.scripting,
-          "fullMark": 150
-        },
-        {
-          "subject": "Procedural Prog.",
-          "A": 85,
-          "B": user.skills.prog.procedural,
-          "fullMark": 150
-        }
-      ];
-
-      setSteamStats = () => {
-        setRadarStats(STEAM);
-        setCurrRadar("steam");
-      }    
-
-      setMathStats = () => {
-        setRadarStats(Math);
-        setCurrRadar("math");
+    let STEAM = [
+      {
+        "subject": "Science",
+        "A": 10,
+        "B": 50,
+        "fullMark": 150
+      },
+      {
+        "subject": "Technology",
+        "A": 98,
+        "B": 60,
+        "fullMark": 150
+      },
+      {
+        "subject": "Engineering",
+        "A": 86,
+        "B": 90,
+        "fullMark": 150
+      },
+      {
+        "subject": "Arts",
+        "A": 99,
+        "B": 10,
+        "fullMark": 150
+      },
+      {
+        "subject": "Maths",
+        "A": 85,
+        "B": 60,
+        "fullMark": 150
       }
+    ];
 
-      setProgStats = () => {
-        setRadarStats(Prog);
-        setCurrRadar("prog");
-      } 
+    let Math = [
+      {
+        "subject": "Discrete Maths",
+        "A": 30,
+        "B": 30,
+        "fullMark": 150
+      },
+      {
+        "subject": "Calculus",
+        "A": 30,
+        "B": 30,
+        "fullMark": 150
+      },
+      {
+        "subject": "Linear Algebra",
+        "A": 30,
+        "B": 30,
+        "fullMark": 150
+      },
+      {
+        "subject": "Statistics",
+        "A": 99,
+        "B": 30,
+        "fullMark": 150
+      },
+      {
+        "subject": "Cryptology",
+        "A": 85,
+        "B": 30,
+        "fullMark": 150
+      }
+    ];
+
+    let Prog = [
+      {
+        "subject": "OOP",
+        "A": 120,
+        "B": 30,
+        "fullMark": 150
+      },
+      {
+        "subject": "Logical Prog.",
+        "A": 98,
+        "B": 30,
+        "fullMark": 150
+      },
+      {
+        "subject": "Functionl Prog.",
+        "A": 86,
+        "B": 30,
+        "fullMark": 150
+      },
+      {
+        "subject": "Scripting",
+        "A": 99,
+        "B": 30,
+        "fullMark": 150
+      },
+      {
+        "subject": "Procedural Prog.",
+        "A": 85,
+        "B": 30,
+        "fullMark": 150
+      }
+    ];
+
+    const setSteamStats = () => {
+      setRadarStats(STEAM);
+      setCurrRadar("steam");
+    }    
+
+    const setMathStats = () => {
+      setRadarStats(Math);
+      setCurrRadar("math");
     }
 
-    useEffect(() => {
-      if (user)
-        setSteamStats();
-    }, [])
+    const setProgStats = () => {
+      setRadarStats(Prog);
+      setCurrRadar("prog");
+    } 
+    
 
     return (
       <div className="h-full">
