@@ -1,11 +1,7 @@
-import { React, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {RadarChart, PolarGrid, PolarAngleAxis, Radar, Legend} from 'recharts';
 
 const RadarChartComp = ({ user, users }) => {
-
-    const [radarStats, setRadarStats] = useState([]);
-    const [currRadar, setCurrRadar] = useState("steam");
-
 
     let STEAM = [
       {
@@ -106,6 +102,10 @@ const RadarChartComp = ({ user, users }) => {
       }
     ];
 
+
+    const [radarStats, setRadarStats] = useState(STEAM);
+    const [currRadar, setCurrRadar] = useState("steam");
+
     const setSteamStats = () => {
       setRadarStats(STEAM);
       setCurrRadar("steam");
@@ -121,6 +121,7 @@ const RadarChartComp = ({ user, users }) => {
       setCurrRadar("prog");
     } 
     
+
 
     return (
       <div className="h-full">
