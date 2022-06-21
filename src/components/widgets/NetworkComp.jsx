@@ -2,53 +2,69 @@ import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 
 
-const NetworkComp = ({ user, users, overview }) => {
+const NetworkComp = ({ }) => {
 
-  // let graph = {
-  //   nodes: [
-  //     { name: "Alice" },
-  //     { name: "Bob" },
-  //     { name: "Chen" },
-  //     { name: "Dawg" },
-  //     { name: "Ethan" },
-  //     { name: "George" },
-  //     { name: "Frank" },
-  //     { name: "Hanes" }
-  //   ],
-  //   links: [
-  //     { source: "Alice", target: "Bob" },
-  //     { source: "Chen", target: "Bob" },
-  //     { source: "Dawg", target: "Chen" },
-  //     { source: "Hanes", target: "Frank" },
-  //     { source: "Hanes", target: "George" },
-  //     { source: "Dawg", target: "Ethan" },
-  //     { source: "Dawg", target: "Alice" },
-  //     { source: "Dawg", target: "Frank" }
-  //   ]
-  // };
+  let graph = {
+    nodes: [
+      { name: "0" },
+      { name: "1" },
+      { name: "2" },
+      { name: "3" },
+      { name: "4" },
+      { name: "5" },
+      { name: "6" },
+      { name: "7" },
+      { name: "8" },
+      { name: "9" },
+      { name: "10" },
+      { name: "11" },
+      { name: "12" },
+      { name: "13" },
+      { name: "14" }
+    ],
+    links: [
+      { source: 0, target: 1},
+      { source: 0, target: 2},
+      { source: 0, target: 3},
+      { source: 0, target: 6},
+      { source: 0, target: 9},
+      { source: 0, target: 10},
+      { source: 0, target: 14},
+      { source: 1, target: 2},
+      { source: 2, target: 5},
+      { source: 6, target: 7},
+      { source: 6, target: 8},
+      { source: 9, target: 4},
 
-  // let nodes = graph.nodes;
+      { source: 10, target: 11},
+      { source: 10, target: 12},
+      { source: 10, target: 13},
+      { source: 11, target: 12},
+      { source: 12, target: 14},
 
-  // let links = graph.links; 
+    ]
+  };
+
+  let nodes = graph.nodes;
+
+  let links = graph.links; 
 
   const svgRef = useRef();
   const wrapperRef = useRef();
   
-  let nodes = [];
-  let links = [];
 
   useEffect(() => {
-    if (user) {
-      nodes = [{name: "kevin"},];
-      links = [];
+    // if (user) {
+    //   nodes = [{name: "kevin"},];
+    //   links = [];
 
-      users.forEach(u => {
-        if (user.includes_id.includes(u._id)) {
-          nodes.push({name: u.name});
-          links.push({source: user.name, target: u.name});
-        }
-      })
-    }
+    //   users.forEach(u => {
+    //     if (user.includes_id.includes(u._id)) {
+    //       nodes.push({name: u.name});
+    //       links.push({source: user.name, target: u.name});
+    //     }
+    //   })
+    // }
 
 
     const svg = d3.select(svgRef.current);
@@ -62,9 +78,9 @@ const NetworkComp = ({ user, users, overview }) => {
         "link",
         d3
           .forceLink()
-          .id((d) => {
-            return d.name;
-          }).strength(1)
+          /*.id((d) => {
+            return d.id;
+          })*/.strength(1)
       )
       .force("charge", d3.forceManyBody().strength(-600))
       .force("center", d3.forceCenter(width / 2, height / 2))
@@ -105,7 +121,7 @@ const NetworkComp = ({ user, users, overview }) => {
 
     simulation
       .force("link").links(links)
-      .distance(120);
+      .distance(160);
     
     simulation
       .force("collide", d3.forceCollide().radius(d => d.r + 5).iterations(4));

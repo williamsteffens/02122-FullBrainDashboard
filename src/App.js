@@ -1,6 +1,6 @@
 import './App.css';
 import { React, useState, useEffect } from 'react';
-import { Navbar, Dashboard, Footer } from './components';
+import { Navbar, Dashboard } from './components';
 import { Routes, Route } from 'react-router-dom';
 // import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -25,7 +25,6 @@ const App = () => {
           <Route path="/" element={<Dashboard users={users} />} />
           <Route path="dashboard/*" element={<Dashboard users={users} />} />
         </Routes>
-        <Footer />
       </div>
     </>
   );

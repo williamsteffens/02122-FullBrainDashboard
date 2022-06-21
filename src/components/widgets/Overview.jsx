@@ -10,6 +10,7 @@ import LoadingSpinner from '../ui/LoadingSpinner';
 const Overview = () => {
   const [tally, setTally] = useState(null);
   const [days, setDays] = useState(null)
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect( ()=> {
     axios.get(process.env.REACT_APP_BACKEND_DATA)
@@ -33,6 +34,8 @@ const Overview = () => {
         }
       
         setTally(users.sort( (a,b) => b.activityScore - a.activityScore ))
+        console.log(users[0]);
+        setCurrentUser(users[0])
       })
       .catch( err => console.log(err))
 
@@ -52,23 +55,18 @@ const Overview = () => {
   },[])
 
   return (
-    /*<div class="bg-amber-300 p-8">
-      <div class="grid grid-cols-12 gap-6">
-        <div class="justify-center col-span-full sm:col-span-6 bg-white shadow-lg rounded-sm border border-slate-150">
-          <ResponsiveContainer width="95%" height="95%">
-            <BarChartComp></BarChartComp>
-          </ResponsiveContainer>
-        </div>
-        <div class="flex flex-col col-span-full sm:col-span-6 bg-white shadow-lg rounded-sm border border-slate-150"></div>
+    <div>
+      <div className="flex flex-wrap justify-center items-center">
+            <div className="mr-4 p-5 mb-4 shrink-0 w-[500px] overview-card overflow-auto"> <Milestones overview></Milestones> </div>
+            <div className="mr-4 p-5 mb-4 shrink-0 w-[670px] overview-card overflow-auto"> <BarChartComp data={days}></BarChartComp> </div>
+            <div className="mb-4 p-5 w-[1200px] overview-card overflow-auto"> <NetworkComp overview></NetworkComp> </div>
+            <div className="mb-4 p-5 w-[1200px] overview-card overflow-auto"> <RadarChartComp></RadarChartComp> </div>
+            {/*<div className="mt-2 p-3 shrink-0 w-[1400px] rounded-xl bg-white shadow-lg h-140 overflow-auto">   {tally ? <LeaderBoard data={tally} overview/> : <LoadingSpinner/>}</div>*/}
       </div>
-    </div>*/
-    <div className="flex flex-wrap justify-center items-center">
-            <div className="mr-4 mb-4 p-3 shrink-0 w-[700px] rounded-xl bg-white shadow-lg overview-card overflow-auto"> <BarChartComp data={days}></BarChartComp> </div>
-            <div className="mb-4 p-3 shrink-0 w-[700px] rounded-xl bg-white shadow-lg overview-card overflow-auto"> <RadarChartComp></RadarChartComp> </div>
-            <div className="mr-4 mb-4 p-3 shrink-0 w-[700px] rounded-xl bg-white shadow-lg overview-card-2nd-row overflow-auto"> <Milestones overview></Milestones> </div>
-            <div className="mb-4 p-3 shrink-0 w-[700px] rounded-xl bg-white shadow-lg overview-card-2nd-row overflow-auto"> <NetworkComp overview></NetworkComp> </div>
-            <div className="mt-2 p-3 shrink-0 w-[1400px] rounded-xl bg-white shadow-lg h-140 overflow-auto">   {tally ? <LeaderBoard data={tally} overview/> : <LoadingSpinner/>}</div>
     </div>
+  
+
+    
   )
 }
 

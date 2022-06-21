@@ -55,7 +55,7 @@ const Milestones = ({overview}) => {
         let personalDetails = (userList.find(user => user.user_ID === userId ))
         
         setPersonalBarChart([
-          { name: "Questions Asked",  value: personalDetails['Questions asked'], threshold: 500},
+          {name: "Questions Asked",  value: personalDetails['Questions asked'], threshold: 500},
           {name: "Likes Received", value: personalDetails['Likes received'], threshold: 1000},
           {name: "Shared Posts", value: personalDetails['Shared posts'], threshold: 400},
           {name: "Shared Resources", value: personalDetails['Shared resources'], threshold: 100}]

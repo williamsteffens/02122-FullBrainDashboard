@@ -141,10 +141,30 @@ code {
   cursor: pointer;
 }
 
+.radarButton {
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 5px;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.radarButton:hover {
+  background-color: #c6c6c6;
+}
+
+.radarButton:active {
+  background-color: #b0b0b0;
+}
+
 
 .overview-card{
   width: 40rem;
   height: 25rem;
+  background-color: #fff;
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 5px;
+  padding: 4px;
 }
 
 .overview-card-2nd-row{
