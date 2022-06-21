@@ -64,9 +64,6 @@ const Overview = () => {
             {/*<div className="mt-2 p-3 shrink-0 w-[1400px] rounded-xl bg-white shadow-lg h-140 overflow-auto">   {tally ? <LeaderBoard data={tally} overview/> : <LoadingSpinner/>}</div>*/}
       </div>
     </div>
-  
-
-    
   )
 }
 
