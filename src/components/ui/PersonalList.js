@@ -18,8 +18,8 @@ const PersonalList = ({data, personalBarChart, overview}) => {
     }
 
     return (
-        <div className="flex justify-between w-full items-center justify-between">
-            <div className="flex flex-col milestones border border-gray-300 p-5 rounded-lg">
+        <div className="flex justify-center w-full items-center">
+            <div className={`flex flex-col milestones border border-gray-300 p-5 rounded-lg ${overview ? 'w-full' : ''}`}>
                 <div className="flex justify-between mb-5 w-full items-center">
                     <h5 className="font-bold">Milestones</h5>
                     <div className="flex text-sm text-slate-500 items-center justify-center">

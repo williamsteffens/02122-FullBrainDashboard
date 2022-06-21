@@ -3,7 +3,7 @@ import companyLogo from '../assets/placeholder_image.jpeg';
 import ProgressBar from '../charts/ProgressBar';
 
 const LeaderBoard = ({data, overview}) => {
-    console.log(data)
+    
     let rank = 0
 
     const handleRank = () => {

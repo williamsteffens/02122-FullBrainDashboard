@@ -23,7 +23,6 @@ const Milestones = ({overview}) => {
   useEffect( ()=> {
     axios.get(process.env.REACT_APP_BACKEND_DATA)
       .then(res => {
-        console.log(res)
         let userList = res.data.users;
         let questionsTally = [];
         let likesTally = [];

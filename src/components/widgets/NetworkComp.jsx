@@ -50,6 +50,7 @@ const NetworkComp = ({ user, users, overview }) => {
       })
     }
 
+
     const svg = d3.select(svgRef.current);
 
     const width = wrapperRef.current.clientWidth;
@@ -168,3 +169,4 @@ const NetworkComp = ({ user, users, overview }) => {
 }
 
 export default NetworkComp
+

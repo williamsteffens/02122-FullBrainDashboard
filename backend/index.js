@@ -2,6 +2,8 @@ import app from "./server.js"
 import mongodb from "mongodb"
 import dotenv from "dotenv"
 import FBrainUsersDAOs from "./dataAccessObject/fBrainUsersDAO.js"
+import WeekdaysDAO from './dataAccessObject/weekdaysDAO.js';
+
 dotenv.config()
 const MongoClient = mongodb.MongoClient;
 
@@ -18,6 +20,8 @@ MongoClient.connect(process.env.FB_USERS_DB_URI, {
   })
     .then(async client => {
         await FBrainUsersDAOs.injectDB(client);
+        await WeekdaysDAO.injectDB(client);
+
         app.listen(port, () => {
             console.log(`listening on port ${port}`);
         });
