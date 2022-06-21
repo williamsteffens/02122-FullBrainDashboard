@@ -1,16 +1,403 @@
 {
     "users": [
         {
-            "id": 1,
-            "name": "kevin"
+            "_id": 1,
+            "name": "kevin",
+            "activity": {
+                "monday": {
+                    "likes": 22,
+                    "comments": 12,
+                    "shares": 0
+                },
+                "tuesday": {
+                    "likes": 13,
+                    "comments": 4,
+                    "shares": 4
+                },
+                "wednesday": {
+                    "likes": 22,
+                    "comments": 1,
+                    "shares": 12
+                },
+                "thursday": {
+                    "likes": 22,
+                    "comments": 15,
+                    "shares": 7
+                },
+                "friday": {
+                    "likes": 22,
+                    "comments": 19,
+                    "shares": 3
+                } 
+            },
+            "experience": 69,
+            "skills": {
+                "steam": {
+                    "science": 160,
+                    "technology": 5,
+                    "engineering": 5,
+                    "arts": 1,
+                    "maths": 4
+                },
+                "math": {
+                    "disc": 5,
+                    "calc": 3,
+                    "linAlg": 4,
+                    "stats": 4,
+                    "crypto": 3
+                }, 
+                "prog": {
+                    "oop": 5,
+                    "logicprog": 2,
+                    "funcprog": 3,
+                    "scripting": 2,
+                    "procedural": 3
+                }
+            },
+            "includes_id": [2, 3, 4, 5, 6, 7],
+            "fullbrainCoins": 2
         },
         {
-            "id": 2,
-            "name": "not kevin"
+            "_id": 2,
+            "name": "kevin2",
+            "activity": {
+                "monday": {
+                    "likes": 22,
+                    "comments": 12,
+                    "shares": 0
+                },
+                "tuesday": {
+                    "likes": 13,
+                    "comments": 4,
+                    "shares": 4
+                },
+                "wednesday": {
+                    "likes": 22,
+                    "comments": 1,
+                    "shares": 12
+                },
+                "thursday": {
+                    "likes": 22,
+                    "comments": 15,
+                    "shares": 7
+                },
+                "friday": {
+                    "likes": 22,
+                    "comments": 19,
+                    "shares": 3
+                } 
+            },
+            "experience": 69,
+            "skills": {
+                "steam": {
+                    "science": 160,
+                    "technology": 5,
+                    "engineering": 5,
+                    "arts": 1,
+                    "maths": 4
+                },
+                "math": {
+                    "disc": 5,
+                    "calc": 3,
+                    "linAlg": 4,
+                    "stats": 4,
+                    "crypto": 3
+                }, 
+                "prog": {
+                    "oop": 5,
+                    "logicprog": 2,
+                    "funcprog": 3,
+                    "scripting": 2,
+                    "procedural": 3
+                }
+            },
+            "includes_id": [2, 3, 4, 5, 6, 7, 8],
+            "fullbrainCoins": 2
         },
         {
-            "id": 3,
-            "name": "ib"
+            "_id": 3,
+            "name": "kevin3",
+            "activity": {
+                "monday": {
+                    "likes": 22,
+                    "comments": 12,
+                    "shares": 0
+                },
+                "tuesday": {
+                    "likes": 13,
+                    "comments": 4,
+                    "shares": 4
+                },
+                "wednesday": {
+                    "likes": 22,
+                    "comments": 1,
+                    "shares": 12
+                },
+                "thursday": {
+                    "likes": 22,
+                    "comments": 15,
+                    "shares": 7
+                },
+                "friday": {
+                    "likes": 22,
+                    "comments": 19,
+                    "shares": 3
+                } 
+            },
+            "experience": 69,
+            "skills": {
+                "steam": {
+                    "science": 160,
+                    "technology": 5,
+                    "engineering": 5,
+                    "arts": 1,
+                    "maths": 4
+                },
+                "math": {
+                    "disc": 5,
+                    "calc": 3,
+                    "linAlg": 4,
+                    "stats": 4,
+                    "crypto": 3
+                }, 
+                "prog": {
+                    "oop": 5,
+                    "logicprog": 2,
+                    "funcprog": 3,
+                    "scripting": 2,
+                    "procedural": 3
+                }
+            },
+            "includes_id": [2, 3, 4, 5, 6, 7, 8],
+            "fullbrainCoins": 2
+        },
+        {
+            "_id": 4,
+            "name": "kevin4",
+            "activity": {
+                "monday": {
+                    "likes": 22,
+                    "comments": 12,
+                    "shares": 0
+                },
+                "tuesday": {
+                    "likes": 13,
+                    "comments": 4,
+                    "shares": 4
+                },
+                "wednesday": {
+                    "likes": 22,
+                    "comments": 1,
+                    "shares": 12
+                },
+                "thursday": {
+                    "likes": 22,
+                    "comments": 15,
+                    "shares": 7
+                },
+                "friday": {
+                    "likes": 22,
+                    "comments": 19,
+                    "shares": 3
+                } 
+            },
+            "experience": 69,
+            "skills": {
+                "steam": {
+                    "science": 160,
+                    "technology": 5,
+                    "engineering": 5,
+                    "arts": 1,
+                    "maths": 4
+                },
+                "math": {
+                    "disc": 5,
+                    "calc": 3,
+                    "linAlg": 4,
+                    "stats": 4,
+                    "crypto": 3
+                }, 
+                "prog": {
+                    "oop": 5,
+                    "logicprog": 2,
+                    "funcprog": 3,
+                    "scripting": 2,
+                    "procedural": 3
+                }
+            },
+            "includes_id": [2, 3, 4, 5, 6, 7, 8],
+            "fullbrainCoins": 2
+        },
+        {
+            "_id": 5,
+            "name": "kevin5",
+            "activity": {
+                "monday": {
+                    "likes": 22,
+                    "comments": 12,
+                    "shares": 0
+                },
+                "tuesday": {
+                    "likes": 13,
+                    "comments": 4,
+                    "shares": 4
+                },
+                "wednesday": {
+                    "likes": 22,
+                    "comments": 1,
+                    "shares": 12
+                },
+                "thursday": {
+                    "likes": 22,
+                    "comments": 15,
+                    "shares": 7
+                },
+                "friday": {
+                    "likes": 22,
+                    "comments": 19,
+                    "shares": 3
+                } 
+            },
+            "experience": 69,
+            "skills": {
+                "steam": {
+                    "science": 160,
+                    "technology": 5,
+                    "engineering": 5,
+                    "arts": 1,
+                    "maths": 4
+                },
+                "math": {
+                    "disc": 5,
+                    "calc": 3,
+                    "linAlg": 4,
+                    "stats": 4,
+                    "crypto": 3
+                }, 
+                "prog": {
+                    "oop": 5,
+                    "logicprog": 2,
+                    "funcprog": 3,
+                    "scripting": 2,
+                    "procedural": 3
+                }
+            },
+            "includes_id": [2, 3, 4, 5, 6, 7, 8],
+            "fullbrainCoins": 2
+        },
+        {
+            "_id": 6,
+            "name": "kevin6",
+            "activity": {
+                "monday": {
+                    "likes": 22,
+                    "comments": 12,
+                    "shares": 0
+                },
+                "tuesday": {
+                    "likes": 13,
+                    "comments": 4,
+                    "shares": 4
+                },
+                "wednesday": {
+                    "likes": 22,
+                    "comments": 1,
+                    "shares": 12
+                },
+                "thursday": {
+                    "likes": 22,
+                    "comments": 15,
+                    "shares": 7
+                },
+                "friday": {
+                    "likes": 22,
+                    "comments": 19,
+                    "shares": 3
+                } 
+            },
+            "experience": 69,
+            "skills": {
+                "steam": {
+                    "science": 160,
+                    "technology": 5,
+                    "engineering": 5,
+                    "arts": 1,
+                    "maths": 4
+                },
+                "math": {
+                    "disc": 5,
+                    "calc": 3,
+                    "linAlg": 4,
+                    "stats": 4,
+                    "crypto": 3
+                }, 
+                "prog": {
+                    "oop": 5,
+                    "logicprog": 2,
+                    "funcprog": 3,
+                    "scripting": 2,
+                    "procedural": 3
+                }
+            },
+            "includes_id": [2, 3, 4, 5, 6, 7, 8],
+            "fullbrainCoins": 2
+        },
+        {
+            "_id": 7,
+            "name": "kevin7",
+            "activity": {
+                "monday": {
+                    "likes": 22,
+                    "comments": 12,
+                    "shares": 0
+                },
+                "tuesday": {
+                    "likes": 13,
+                    "comments": 4,
+                    "shares": 4
+                },
+                "wednesday": {
+                    "likes": 22,
+                    "comments": 1,
+                    "shares": 12
+                },
+                "thursday": {
+                    "likes": 22,
+                    "comments": 15,
+                    "shares": 7
+                },
+                "friday": {
+                    "likes": 22,
+                    "comments": 19,
+                    "shares": 3
+                } 
+            },
+            "experience": 69,
+            "skills": {
+                "steam": {
+                    "science": 160,
+                    "technology": 5,
+                    "engineering": 5,
+                    "arts": 1,
+                    "maths": 4
+                },
+                "math": {
+                    "disc": 5,
+                    "calc": 3,
+                    "linAlg": 4,
+                    "stats": 4,
+                    "crypto": 3
+                }, 
+                "prog": {
+                    "oop": 5,
+                    "logicprog": 2,
+                    "funcprog": 3,
+                    "scripting": 2,
+                    "procedural": 3
+                }
+            },
+            "includes_id": [2, 3, 4, 5, 6, 7, 8],
+            "fullbrainCoins": 2
         }
     ]
 }

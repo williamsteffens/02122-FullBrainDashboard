@@ -1,59 +1,62 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import { transition } from 'd3';
 
 
+const NetworkComp = ({ user, users, overview }) => {
 
-let graph = {
-  nodes: [
-    { name: "Alice" },
-    { name: "Bob" },
-    { name: "Chen" },
-    { name: "Dawg" },
-    { name: "Ethan" },
-    { name: "George" },
-    { name: "Frank" },
-    { name: "Hanes" }
-  ],
-  links: [
-    { source: "Alice", target: "Bob" },
-    { source: "Chen", target: "Bob" },
-    { source: "Dawg", target: "Chen" },
-    { source: "Hanes", target: "Frank" },
-    { source: "Hanes", target: "George" },
-    { source: "Dawg", target: "Ethan" },
-    { source: "Dawg", target: "Alice" },
-    { source: "Dawg", target: "Frank" }
-  ]
-};
+  // let graph = {
+  //   nodes: [
+  //     { name: "Alice" },
+  //     { name: "Bob" },
+  //     { name: "Chen" },
+  //     { name: "Dawg" },
+  //     { name: "Ethan" },
+  //     { name: "George" },
+  //     { name: "Frank" },
+  //     { name: "Hanes" }
+  //   ],
+  //   links: [
+  //     { source: "Alice", target: "Bob" },
+  //     { source: "Chen", target: "Bob" },
+  //     { source: "Dawg", target: "Chen" },
+  //     { source: "Hanes", target: "Frank" },
+  //     { source: "Hanes", target: "George" },
+  //     { source: "Dawg", target: "Ethan" },
+  //     { source: "Dawg", target: "Alice" },
+  //     { source: "Dawg", target: "Frank" }
+  //   ]
+  // };
 
-const NetworkComp = ({ users, overview }) => {
+  // let nodes = graph.nodes;
+
+  // let links = graph.links; 
 
   const svgRef = useRef();
   const wrapperRef = useRef();
+  
+  let nodes = [];
+  let links = [];
 
   useEffect(() => {
+    if (user) {
+      nodes = [{name: "kevin"},];
+      links = [];
 
-    /* Smart way to make nodes?
-    let nodes = {}
-    
-    links.forEach(link => {
-      links.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
-      link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
-    })
-
-    // if not then use the hierachy thing from the react hooks video 
-    */
-
-
+      users.forEach(u => {
+        if (user.includes_id.includes(u._id)) {
+          nodes.push({name: u.name});
+          links.push({source: user.name, target: u.name});
+        }
+      })
+    }
 
     const svg = d3.select(svgRef.current);
 
     const width = wrapperRef.current.clientWidth;
     const height = wrapperRef.current.clientHeight;
-
+    
     var simulation = d3
-      .forceSimulation(graph.nodes)
+      .forceSimulation(nodes)
       .force(
         "link",
         d3
@@ -70,7 +73,7 @@ const NetworkComp = ({ users, overview }) => {
       .append("g")
       .attr("class", "links")
       .selectAll("line")
-      .data(graph.links)
+      .data(links)
       .enter().append("line")
         .attr("stroke-width", d => 7)
       
@@ -78,7 +81,7 @@ const NetworkComp = ({ users, overview }) => {
       .append("g")
         .attr("class", "nodes")
       .selectAll("circle")
-      .data(graph.nodes)
+      .data(nodes)
       .enter().append("circle")
         .attr("r", 22)
         .attr("fill", d => "#ffbb78")
@@ -93,14 +96,14 @@ const NetworkComp = ({ users, overview }) => {
       .append("g")
         .attr("class", "labels, noselect")
       .selectAll("text")
-        .data(graph.nodes)
+        .data(nodes)
       .enter().append("text")
         .attr("dx", 30)
         .attr("dy", ".35em")
         .text(d => d.name);
 
     simulation
-      .force("link").links(graph.links)
+      .force("link").links(links)
       .distance(120);
     
     simulation
@@ -153,15 +156,15 @@ const NetworkComp = ({ users, overview }) => {
       d.fx = null;
       d.fy = null;
     }
-
   }, []);
+  
 
+  
   return (
     <div ref={wrapperRef} className="h-96">
       <h1 className="font-bold text-xl mb-6">Your Learning Network</h1>
       <svg ref={svgRef} className="network" ></svg>
-    </div>
-  )
+    </div>)
 }
 
 export default NetworkComp

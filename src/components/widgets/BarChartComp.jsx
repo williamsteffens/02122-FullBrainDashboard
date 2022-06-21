@@ -1,35 +1,36 @@
 import React from 'react';
 import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
 
-const BarChartComp = () => {
+const BarChartComp = ({ user }) => {
+    
+    if (!user)
+      return;
 
-    const likes = [
-        {name: "Monday", posts: 12, shares: 6, comments: 8},
-        {name: "Tuesday", posts: 15, shares: 0, comments: 10},
-        {name: "Wednesday", posts: 9, shares: 12, comments: 5},
-        {name: "Thursday", posts: 5, shares: 5, comments: 12},
-        {name: "Thursday", posts: 0, shares: 0, comments: 0}
+    const data = [
+        {name: "Monday", likes: user.activity.monday.likes, shares: user.activity.monday.shares, comments: user.activity.monday.comments},
+        {name: "Tuesday", likes: user.activity.tuesday.likes, shares: user.activity.tuesday.shares, comments: user.activity.tuesday.comments},
+        {name: "Wednesday", likes: user.activity.wednesday.likes, shares: user.activity.wednesday.shares, comments: user.activity.wednesday.comments},
+        {name: "Thursday", likes: user.activity.thursday.likes, shares: user.activity.thursday.shares, comments: user.activity.thursday.comments},
+        {name: "Friday", likes: user.activity.friday.likes, shares: user.activity.friday.shares, comments: user.activity.friday.comments}
     ]
+
     return (
       <div className="h-full">
-        <div style={{display: 'flex', justifyContent:'ceneter', alignItems:'center'}}>
-          <h1 className="font-bold">Activity</h1>
+        <h1 className="font-bold text-xl mb-6">Your Community Impact</h1>
+        <div className="flex justify-center">
+          <BarChart margin={{ top: 30, right: 30, left: 0, bottom: 10 }} width={650} height={350} data={data}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="likes" stackId="a" fill="#8884d8" />
+              <Bar dataKey="shares" stackId="a" fill="#82ca9d" />
+              <Bar dataKey="comments" stackId="a" fill="#ffc658" />
+          </BarChart>
         </div>
-        <BarChart margin={{ top: 30, right: 30, left: 0, bottom: 10 }} width={650} height={350} data={likes}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="posts" stackId="a" fill="#8884d8" onClick={postsClick}/>
-            <Bar dataKey="shares" stackId="a" fill="#82ca9d" />
-            <Bar dataKey="comments" stackId="a" fill="#ffc658" />
-        </BarChart>
       </div>
     )
-    function postsClick() {
-      console.log("Hey")
-   }
 }
   
 

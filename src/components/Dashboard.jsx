@@ -5,6 +5,7 @@ import { DashboardNavbar, Overview, Milestones, BarChartComp, NetworkComp, Radar
 
 
 const Dashboard = ({ users }) => {
+
   return (
     <div className="flex flex-col w-full">
         <div>
@@ -15,9 +16,9 @@ const Dashboard = ({ users }) => {
                 <Route path="/" element={<Overview />} />
                 <Route path="overview" element={<Overview />} />   
                 <Route path="milestones" element={<Milestones />} />
-                <Route path="impact" element={<BarChartComp />} />
-                <Route path="network" element={<NetworkComp users={users} />} />
-                <Route path="knowledge_distribution" element={<RadarChartComp />} />
+                <Route path="impact" element={<BarChartComp user={users[0]} />} />
+                <Route path="network" element={<NetworkComp user={users[0]} users={users} />} />
+                <Route path="knowledge_distribution" element={<RadarChartComp user={users[0]} />} />
             </Routes>
         </div>
     </div>
