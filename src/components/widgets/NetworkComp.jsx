@@ -6,21 +6,21 @@ const NetworkComp = ({ }) => {
 
   let graph = {
     nodes: [
-      { name: "0" },
-      { name: "1" },
-      { name: "2" },
-      { name: "3" },
-      { name: "4" },
-      { name: "5" },
-      { name: "6" },
-      { name: "7" },
-      { name: "8" },
-      { name: "9" },
-      { name: "10" },
-      { name: "11" },
-      { name: "12" },
-      { name: "13" },
-      { name: "14" }
+      { name: "Alice" },
+      { name: "Bob" },
+      { name: "Carol" },
+      { name: "Dave" },
+      { name: "Erin" },
+      { name: "Frank" },
+      { name: "Grace" },
+      { name: "Heidi" },
+      { name: "Ivan" },
+      { name: "Judy" },
+      { name: "Mike" },
+      { name: "Nick" },
+      { name: "Olivia" },
+      { name: "Peggy" },
+      { name: "Robert" }
     ],
     links: [
       { source: 0, target: 1},
